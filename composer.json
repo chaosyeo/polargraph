@@ -1,0 +1,34 @@
+{
+    "name": "ChaosYeo/Polargraph",
+    "description": "Polargraph help you to make photograph width polar effect.",
+    "keywords": ["polar", "photograph"],
+    "homepage": "http://polargraph.chaos.xin",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Chaos",
+            "email": "master@chaos.xin",
+            "homepage": "http://www.chaos.xin"
+        }
+    ],
+    "support": {
+        "irc": "irc://irc.freenode.org/polargraph",
+        "issues": "https://github.com/chaos/polargraph/issues"
+    },
+    "require": {
+        "php": "^7.0",
+        "ext-gd": "*",
+        "symfony/console": "^4.1"
+    },
+    "autoload": {
+        "psr-4": { "Polargraph\\": "src/Polargraph" }
+    },
+    "bin": ["cli/polargraph"],
+    "repositories": {
+        "packagist": {
+            "type": "composer",
+            "url": "https://packagist.phpcomposer.com"
+        }
+    }
+}

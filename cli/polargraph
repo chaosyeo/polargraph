@@ -1,0 +1,23 @@
+#!/usr/bin/env php
+<?php
+
+use Polargraph\Console\Application;
+use Polargraph\Di;
+
+if (PHP_SAPI !== 'cli') {
+    echo 'Warning: Polargraph should be invoked via the CLI version of PHP, not the ' . PHP_SAPI . ' SAPI' . PHP_EOL;
+}
+require __DIR__ . '/../src/bootstrap.php';
+
+if(function_exists('ini_set')) {
+    @ini_set('display_errors', 1);
+}
+
+try {
+    $di = new Di();
+    $console = new Application($di);
+    $console->run();
+} catch (Exception $exception) {
+    echo $exception->getMessage(), PHP_EOL;
+    echo $exception->getTraceAsString(), PHP_EOL;
+}
