@@ -11,7 +11,7 @@ class AboutCommand extends Command
     protected function configure()
     {
         $this->setName('about');
-        $this->setDescription('Shows the short information about Polargraph');
+        $this->setDescription('Shows the short information about polargraph');
         $this->setHelp("<info>php polargraph about</info>");
     }
 

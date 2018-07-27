@@ -74,12 +74,16 @@ class MakeCommand extends Command
                 $radius = $this->radius($relativeX, $relativeY);
                 $theta = $this->theta($relativeX, $relativeY);
 
-                $srcResizeX = round($theta / 360 * $distWidth);
-                $srcResizeY = round($radius * 2 * $distHeight / $distDiagonal);
+                $srcResizeX = $theta / 360 * $distWidth;
+                $srcResizeY = $radius * 2 * $distHeight / $distDiagonal;
 
                 if(0 <= $srcResizeX && $srcResizeX < $distWidth && 0 <= $srcResizeY && $srcResizeY < $distHeight) {
                     $color = imagecolorat($srcResize, $srcResizeX, $srcResizeY);
-                    imagesetpixel($dist, $distX, $distY ,$color);
+                    imagesetpixel($dist, $distX, $distY, $color);
+                } else {
+                    $srcResizeY = $distHeight - 1;
+                    $color = imagecolorat($srcResize, $srcResizeX, $srcResizeY);
+                    imagesetpixel($dist, $distX, $distY, $color);
                 }
             }
         }
