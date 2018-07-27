@@ -11,6 +11,7 @@ require __DIR__ . '/../src/bootstrap.php';
 
 if(function_exists('ini_set')) {
     @ini_set('display_errors', 1);
+    @ini_set('memory_limit', '512M');
 }
 
 try {
