@@ -56,7 +56,7 @@ class MakeCommand extends Command
         $distWidth = $distHeight = $srcHeight;
 
         $srcResize = imagecreatetruecolor($distWidth, $distHeight);
-        imagecopyresized($srcResize, $source, 0, 0, 0, 0, $distWidth, $distHeight, $srcWidth, $srcHeight);
+        imagecopyresized($srcResize, imagerotate($source, 180, 0), 0, 0, 0, 0, $distWidth, $distHeight, $srcWidth, $srcHeight);
 
         imagedestroy($source);
         unset($source);
@@ -88,7 +88,7 @@ class MakeCommand extends Command
             }
         }
         imagesavealpha($dist, true);
-        imagepng($dist, 'output.png');
+        imagejpeg($dist, $input->getOption('output'));
         imagedestroy($srcResize);
         imagedestroy($dist);
     }

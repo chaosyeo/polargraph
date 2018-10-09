@@ -19,7 +19,8 @@
     "require": {
         "php": "^7.0",
         "ext-gd": "*",
-        "symfony/console": "^4.1"
+        "symfony/console": "^4.1",
+        "symfony/finder": "^4.1"
     },
     "autoload": {
         "psr-4": { "Polargraph\\": "src/Polargraph" }
